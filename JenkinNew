@@ -1,7 +1,7 @@
 node{
      
     stage('SCM Checkout'){
-        git url: 'https://github.com/MithunTechnologiesDevOps/java-web-app-docker.git',branch: 'master'
+        git url: 'https://github.com/rajaverma79/java-web-app-docker.git',branch: 'master'
     }
     
     stage("Maven Clean Package"){
@@ -21,7 +21,8 @@ node{
         sh 'docker push dockerhandson/java-web-app'
      }
      
-      stage('Run Docker Image In Dev Server'){
+     }
+      ###stage('Run Docker Image In Dev Server'){
         
         def dockerRun = ' docker run  -d -p 8080:8080 --name java-web-app dockerhandson/java-web-app'
          
